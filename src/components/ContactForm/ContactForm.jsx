@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isExist } from 'helpers/helpers';
 import { addContact } from 'store/contactsReducer/contactsSlice';
 import { nanoid } from '@reduxjs/toolkit';
+import { contactsSelector } from 'store/selectors';
 
 const ContactForm = () => {
-  const { contacts } = useSelector(state => state.contacts);
+  const contacts = useSelector(contactsSelector);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
